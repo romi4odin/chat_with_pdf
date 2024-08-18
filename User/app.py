@@ -46,7 +46,7 @@ def get_response(llm,vectorstore, question ):
     ## create prompt / template
     prompt_template = """
 
-    Human: Please use the given context to provide concise answer to the question
+    Human: You are a good resume analyser. Please use the given context to provide concise answer to the question
     If you don't know the answer, just say that you don't know, don't try to make up an answer.
     <context>
     {context}
@@ -80,8 +80,8 @@ def main():
     load_index()
 
     dir_list = os.listdir(folder_path)
-    st.write(f"Files and Directories in {folder_path}")
-    st.write(dir_list)
+    #st.write(f"Files and Directories in {folder_path}")
+    #st.write(dir_list)
 
     ## create index
     faiss_index = FAISS.load_local(
@@ -91,7 +91,7 @@ def main():
         allow_dangerous_deserialization=True
     )
 
-    st.write("INDEX IS READY")
+    #st.write("INDEX IS READY")
     question = st.text_input("Please ask your question")
     if st.button("Ask Question"):
         with st.spinner("Querying..."):

@@ -63,7 +63,7 @@ def main():
 
         ##split text 
 
-        splitted_docs = split_text(pages, 1000, 200)
+        splitted_docs = split_text(pages, 20, 10)
 
         st.write(f"splitted Docs length: {len(splitted_docs)}")
         st.write("===========")
